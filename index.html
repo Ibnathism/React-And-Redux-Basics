@@ -14,14 +14,19 @@
         class App extends React.Component {
             state = {
                 name: 'Ryu',
-                age: 30
+                age: 21
             }
             buttonOnClickHandler(e){
                 console.log(e.target, e.pageX);
             }
-            mouseClickHandler(e){
-                console.log(e.target, e.pageX);
-                //console.log(this.state.name);         This will not work
+            //Arrow function takes the value of 'this' as the instance of the class
+            //but normal functions doesn't
+            mouseClickHandler = (e) => {
+                //console.log(e.target, e.pageX);
+                this.setState({
+                    name: 'Muntaka'
+                })
+                console.log(this.state);        
             }
             copyHandler(e){
                 console.log('Try being original for once!');
