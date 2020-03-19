@@ -12,11 +12,28 @@
 
     <script type="text/babel">
         class App extends React.Component {
+            state = {
+                name: 'Ryu',
+                age: 30
+            }
+            buttonOnClickHandler(e){
+                console.log(e.target, e.pageX);
+            }
+            mouseClickHandler(e){
+                console.log(e.target, e.pageX);
+                //console.log(this.state.name);         This will not work
+            }
+            copyHandler(e){
+                console.log('Try being original for once!');
+            }
             render() {
                 return (
                     <div className="app-content">
                         <h1>Hello World</h1>
-                        <p>{Math.random() * 10}</p>
+                        <p>My name is: { this.state.name } and I am {this.state.age}</p>
+                        <button onClick={this.buttonOnClickHandler}>Click Me</button>
+                        <button onClick={this.mouseClickHandler}>Mouse Click</button>
+                        <p onCopy={this.copyHandler}>What we think, we become</p>
                     </div>
                 )
             }
