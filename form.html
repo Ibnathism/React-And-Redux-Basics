@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="form"></div>
+
+    <script type="text/babel">
+        class MyForm extends React.Component {
+            state = {
+                name: 'Muntaka',
+                age: 21
+            }
+            onChangeHandler = (e) => {
+                this.setState({
+                    name: e.target.value
+                });
+            }
+            formSubmitHandler = (e) => {
+                e.preventDefault();
+                console.log('form submitted ', this.state.name);
+            }
+            render() {
+                return (
+                    <div className="app-content">
+                        <h1>My name is {this.state.name }</h1>
+                        <form onSubmit={this.formSubmitHandler}>
+                            <input type="text" onChange={this.onChangeHandler}/>
+                            <button>Submit</button>
+
+                        </form>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<MyForm/>, document.getElementById('form'));
+    </script>
+    
+</body>
+</html>
