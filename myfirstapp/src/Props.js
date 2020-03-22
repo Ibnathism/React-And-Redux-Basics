@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Nested extends Component{
-    render(){
+
+//This is a UI component so we don't need a class here, a function will do 
+//class Nested extends Component{
+const Nested = ({donkeys}) => {
+
+    //inside a function we don't need render method
+    //render(){
         //console.log(this.props);
         
         //Outputting single or multiple
         //const { name, course, session } = this.props;
 
-        //Outputting List
-        const { donkeys } = this.props;
+        //Outputting a List having props , here key must be unique
+        //const { donkeys } = this.props;
+        //donkeys is now a parameter of the function so we don't need a new variable
         const donkeylist = donkeys.map(eachDonkey => {
             return (
                 <div className="donkey" key={eachDonkey.id}>
@@ -18,6 +24,8 @@ class Nested extends Component{
                 </div>
             )
         })
+
+
         return(
 
             //Outputting single or multiple element having props
@@ -34,6 +42,6 @@ class Nested extends Component{
             </div>
         )
     }
-}
+//}
 
 export default Nested;
