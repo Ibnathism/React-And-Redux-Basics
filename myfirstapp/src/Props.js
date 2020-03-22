@@ -41,7 +41,7 @@ const Nested = ({donkeys}) => {
                 { donkeylist }
             </div>
         )
-    }
+}
 //}
 
 export default Nested;

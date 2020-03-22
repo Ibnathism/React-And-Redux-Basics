@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Nested from './Props';
+//import Nested from './Props';
+import Conditional from './ConditionalOutput';
 
 class App extends Component {
   //Outputting List
@@ -23,11 +24,21 @@ class App extends Component {
       </div>*/
 
       //Outputting a List having props
-      <div className="App">
+      /*<div className="App">
           <h1>My first React app!</h1>
           <p>Welcome :)</p>
           <Nested donkeys={this.state.donkeys}/>
+      </div>*/
+      
+      
+      //Conditional Output
+      <div className="App">
+          <h1>My first React app!</h1>
+          <p>Welcome :)</p>
+          <Conditional donkeys={this.state.donkeys}/>
       </div>
+
+
     );
   }
 }
