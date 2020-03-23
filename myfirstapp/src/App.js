@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-//import Nested from './Props';
-import Conditional from './ConditionalOutput';
+import Nested from './props';
+//import Conditional from './conditional';
+import AddDonkey from './form';
 
 class App extends Component {
   //Outputting List
@@ -10,6 +11,19 @@ class App extends Component {
       {name: 'Peter', age: 15, hair: 'red', id: 2},
       {name: 'Swiny', age: 16, hair: 'white', id: 3}
     ]
+  }
+
+  //The new donkey input from onSubmitHandler of form.js  
+  //to add the newdonkey to the donkeys array we will have to make a temporary
+  //array and copy the previous donkeys and the new donkey and then set state 
+  //this is good practice , but the other way around is using push which is bad practice
+  addDonkey = (newDonkey) => {  
+    //console.log(donkey);
+    newDonkey.id = Math.random();
+    let temp = [...this.state.donkeys, newDonkey]
+    this.setState({
+      donkeys: temp
+    })
   }
   render(){
     return (
@@ -32,10 +46,19 @@ class App extends Component {
       
       
       //Conditional Output
+      // <div className="App">
+      //     <h1>My first React app!</h1>
+      //     <p>Welcome :)</p>
+      //     <Conditional donkeys={this.state.donkeys}/>
+      // </div>
+
+      //add new donkey using form
+      //pass the 'addDonkey' function as a prop to the AddDonkey class
       <div className="App">
           <h1>My first React app!</h1>
           <p>Welcome :)</p>
-          <Conditional donkeys={this.state.donkeys}/>
+          <Nested donkeys={this.state.donkeys}/>
+          <AddDonkey addDonkey={this.addDonkey}/>
       </div>
 
 
