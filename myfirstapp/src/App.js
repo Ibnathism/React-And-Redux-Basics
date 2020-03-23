@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Nested from './props';
+//import Nested from './props';
 //import Conditional from './conditional';
 import AddDonkey from './form';
+import DeleteDonkey from './deleteData';
 
 class App extends Component {
   //Outputting List
@@ -25,6 +26,18 @@ class App extends Component {
       donkeys: temp
     })
   }
+
+
+  removeDonkey = (id) => {
+    //console.log(id);
+    let temp = this.state.donkeys.filter(i => {
+      return i.id !== id
+    });
+    this.setState({
+      donkeys: temp
+    })
+  }
+
   render(){
     return (
 
@@ -57,7 +70,7 @@ class App extends Component {
       <div className="App">
           <h1>My first React app!</h1>
           <p>Welcome :)</p>
-          <Nested donkeys={this.state.donkeys}/>
+          <DeleteDonkey removeDonkey={this.removeDonkey} donkeys={this.state.donkeys}/>
           <AddDonkey addDonkey={this.addDonkey}/>
       </div>
 
