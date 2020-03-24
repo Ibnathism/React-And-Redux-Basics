@@ -1,0 +1,13 @@
+body{
+    background: pink;
+    transition: all 1s;
+}
+
+/*
+.donkey  before 'form' means that this only applies in the forms 
+that are inside the className "donkey"
+*/
+.donkey form{
+    background: #fff;
+    padding: 20px;
+}

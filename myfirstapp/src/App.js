@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-//import Nested from './props';
+//import Nested from './donkeys';
 //import Conditional from './conditional';
 import AddDonkey from './addData';
 import DeleteDonkey from './deleteData';
+
+import './donkeys.css'
 
 class App extends Component {
   //Outputting List

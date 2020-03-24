@@ -1,5 +1,6 @@
 import React from 'react';
-
+//import './donkeys.css'
+//Same as props.js with extra delete donkey button added and calling remove donkey method  
 const DeleteDonkey = ({donkeys, removeDonkey}) => {
     const list = donkeys.map(i => {
         return(
@@ -8,7 +9,6 @@ const DeleteDonkey = ({donkeys, removeDonkey}) => {
                 <div>Age : {i.age}</div>
                 <div>Hair : {i.hair}</div>
                 <button onClick={() => {removeDonkey(i.id)}}>Delete Donkey</button>
-
             </div>
         )
     })

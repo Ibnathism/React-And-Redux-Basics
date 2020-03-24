@@ -24,22 +24,13 @@ class AddDonkey extends Component {
         return(
             <div>
                 <form onSubmit={this.onSubmitHandler}>
-
-                    <br></br>
-                    
                     <label htmlFor="name">Name : </label>
                     <input type="text" id="name" onChange={this.onChangeHandler}/>
-                    <br></br>
-                    
                     <label htmlFor="age">Age : </label>
                     <input type="text" id="age" onChange={this.onChangeHandler}/>
-                    <br></br>
-                    
                     <label htmlFor="hair">Hair : </label>
                     <input type="text" id="hair" onChange={this.onChangeHandler}/>
-                    <br></br>
-                    
-                    <button>Submit</button>
+                    <button>Add New Donkey</button>
                 </form>
             </div>
         )
