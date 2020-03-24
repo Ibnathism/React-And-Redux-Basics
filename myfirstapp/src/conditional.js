@@ -3,12 +3,12 @@ import React from 'react';
 const Conditional = ({donkeys}) => {
 
     // Using Ternary
-    // const list = donkeys.map(donkey =>{
-    //     return donkey.age > 13 ?  (
-    //             <div className="donkey" key={donkey.id}>
-    //                 <div>Name: {donkey.name}</div>
-    //                 <div>Age: {donkey.age}</div>
-    //                 <div>Hair: {donkey.hair}</div>
+    // const list = donkeys.map(i =>{
+    //     return i.age > 13 ?  (
+    //             <div className="donkey" key={i.id}>
+    //                 <div>Name: {i.name}</div>
+    //                 <div>Age: {i.age}</div>
+    //                 <div>Hair: {i.hair}</div>
     //             </div>
     //         ) : null;
         
@@ -16,13 +16,13 @@ const Conditional = ({donkeys}) => {
 
 
     //Using if-else
-    // const list = donkeys.map(donkey => {
-    //     if(donkey.age > 13){
+    // const list = donkeys.map(i => {
+    //     if(i.age > 13){
     //         return (
-    //             <div className="donkey" key={donkey.id}>
-    //                 <div>Name: {donkey.name}</div>
-    //                 <div>Age: {donkey.age}</div>
-    //                 <div>Hair: {donkey.hair}</div>
+    //             <div className="donkey" key={i.id}>
+    //                 <div>Name: {i.name}</div>
+    //                 <div>Age: {i.age}</div>
+    //                 <div>Hair: {i.hair}</div>
     //             </div>
     //         )
     //     } else {
@@ -43,12 +43,12 @@ const Conditional = ({donkeys}) => {
     return(
         <div className="list">
             {
-                donkeys.map(donkey =>{
-                    return donkey.age > 13 ?  (
-                            <div className="donkey" key={donkey.id}>
-                                <div>Name: {donkey.name}</div>
-                                <div>Age: {donkey.age}</div>
-                                <div>Hair: {donkey.hair}</div>
+                donkeys.map(i =>{
+                    return i.age > 13 ?  (
+                            <div className="donkey" key={i.id}>
+                                <div>Name: {i.name}</div>
+                                <div>Age: {i.age}</div>
+                                <div>Hair: {i.hair}</div>
                             </div>
                         ) : null;
                     

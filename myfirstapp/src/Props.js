@@ -15,12 +15,12 @@ const Nested = ({donkeys}) => {
         //Outputting a List having props , here key must be unique
         //const { donkeys } = this.props;
         //donkeys is now a parameter of the function so we don't need a new variable
-        const donkeylist = donkeys.map(eachDonkey => {
+        const donkeylist = donkeys.map(i => {
             return (
-                <div className="donkey" key={eachDonkey.id}>
-                    <div>Name: {eachDonkey.name}</div>
-                    <div>Age: {eachDonkey.age}</div>
-                    <div>Hair: {eachDonkey.hair}</div>
+                <div className="donkey" key={i.id}>
+                    <div>Name: {i.name}</div>
+                    <div>Age: {i.age}</div>
+                    <div>Hair: {i.hair}</div>
                 </div>
             )
         })
