@@ -40,6 +40,7 @@ class App extends Component {
     })
   }
 
+  //useful methods
   componentDidMount(){
     console.log('component mounted')
   }
