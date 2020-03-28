@@ -1,15 +1,18 @@
 import React from 'react';
 
-const TodoList = ({todos}) => {
-    const mylist = todos.map(i =>{
+const TodoList = ({todos, removeItem}) => {
+    const mylist = todos.length ? (todos.map(i =>{
         return(
-            <div className="todo-list" key={i.id}>
-                <div># {i.todo}</div>
+            <div className="collection-item" key={i.id}>
+                <span onClick={()=>{removeItem(i.id)}}>{i.todo}</span>
             </div>
         )
     })
+    ):(
+        <p className="center">You have no todos left ,yay!</p>
+    )
     return(
-        <div className="show-list">
+        <div className="todos collection">
             {mylist}
         </div>
     )
