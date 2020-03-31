@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
-
-const Navbar = () => {
+import { Link, NavLink, withRouter } from 'react-router-dom';
+const Navbar = (props) => {
+    //anything automatically goes to about in 2 seconds
+    setTimeout(() => {
+        props.history.push('/about');
+    }, 2000)
     return(
         <nav className="nav-wrapper red darken-3">
             <div className="container">
-                <a className="brand-logo">Poke Times</a>
+                <a href="#top" className="brand-logo">Poke Times</a>
                 <ul className="right">
                     <li><Link to="/">Home</Link></li>
                     <li><NavLink to="/about">About</NavLink></li>
@@ -16,4 +19,7 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+//we wrapped the Navbar using withRouter
+//withRouter is a higher order component that is wrapping the component Navbar and applied it's props
+//withRouter is basically supercharging a component
+export default withRouter(Navbar);
