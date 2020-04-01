@@ -30,7 +30,7 @@ class AddDonkey extends Component {
                     <input type="text" id="age" onChange={this.onChangeHandler}/>
                     <label htmlFor="hair">Hair : </label>
                     <input type="text" id="hair" onChange={this.onChangeHandler}/>
-                    <button>Add New Donkey</button>
+                    <button>Add New</button>
                 </form>
             </div>
         )
