@@ -8,7 +8,7 @@ const Navbar = (props) => {
     return(
         <nav className="nav-wrapper red darken-3">
             <div className="container">
-                <a href="#top" className="brand-logo">Poke Times</a>
+                <a href="#top" className="brand-logo">Quarantine</a>
                 <ul className="right">
                     <li><Link to="/">Home</Link></li>
                     <li><NavLink to="/about">About</NavLink></li>

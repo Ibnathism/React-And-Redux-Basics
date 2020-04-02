@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import Backgroud from '../duck.png'
 
 class Home extends Component {
     state = {
@@ -20,8 +22,11 @@ class Home extends Component {
             posts.map(i => {
                 return(
                     <div className="post card" key={i.id}>
+                        <img src={Backgroud} alt="A Backgroud"/>
                         <div className="card-content">
+                            <Link to={'/'+i.id}>
                             <span className="card-title">{i.title}</span>
+                            </Link>
                             <p>{i.body}</p>
                         </div>
                     </div>
@@ -31,7 +36,7 @@ class Home extends Component {
             <div className="center">No posts yet </div>
         )
         return(
-            <div className="container">
+            <div className="container home">
                 <h4 className="center">Home</h4>
                 {postList}
             </div>
