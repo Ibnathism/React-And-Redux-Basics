@@ -25,7 +25,7 @@ class Home extends Component {
                         <img src={Backgroud} alt="A Backgroud"/>
                         <div className="card-content">
                             <Link to={'/'+i.id}>
-                            <span className="card-title">{i.title}</span>
+                            <span className="card-title red-text">{i.title}</span>
                             </Link>
                             <p>{i.body}</p>
                         </div>

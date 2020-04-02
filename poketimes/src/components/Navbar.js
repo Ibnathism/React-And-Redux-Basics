@@ -6,7 +6,7 @@ const Navbar = (props) => {
     //     props.history.push('/about');
     // }, 2000)
     return(
-        <nav className="nav-wrapper red darken-3">
+        <nav className="nav-wrapper orange darken-3">
             <div className="container">
                 <a href="#top" className="brand-logo">Duck Times</a>
                 <ul className="right">
