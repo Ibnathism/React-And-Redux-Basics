@@ -30,7 +30,7 @@ class Home extends Component {
         //const { posts } = this.state;
 
         //with redux
-        console.log(this.props)
+        //console.log(this.props)
         const { posts } = this.props;
 
 

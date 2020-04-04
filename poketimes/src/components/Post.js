@@ -1,26 +1,32 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+//import axios from 'axios'
+import { connect } from 'react-redux'
+
 
 class Post extends Component {
-    state = {
-        post: null
-    }
-    componentDidMount(){
-        let temp = this.props.match.params.post_id;
-        axios.get('https://jsonplaceholder.typicode.com/posts/'+temp)
-        .then(res => {
-            this.setState({
-                post: res.data
-            })
-            console.log(res);
-        })
+    //without redux
+    // state = {
+    //     post: null
+    // }
+    // componentDidMount(){
+    //     let temp = this.props.match.params.post_id;
+    //     axios.get('https://jsonplaceholder.typicode.com/posts/'+temp)
+    //     .then(res => {
+    //         this.setState({
+    //             post: res.data
+    //         })
+    //         console.log(res);
+    //     })
         
-    }
+    // }
+
+
     render() {
-        const post = this.state.post ? (
+        //console.log(this.props.post)
+        const post = this.props.post ? (
             <div className="post">
-                <h4 className="center orange-text">{this.state.post.title}</h4>
-                <p>{this.state.post.body}</p>
+                <h4 className="center orange-text">{this.props.post.title}</h4>
+                <p>{this.props.post.body}</p>
             </div>
         ) : (
             <div className="center">Loading post...</div>
@@ -33,4 +39,13 @@ class Post extends Component {
     }
 }
 
-export default Post;
+const mapStateToProps = (state, ownProps) => {
+    let id = ownProps.match.params.post_id;
+    //console.log(state);
+    return {
+        post: state.posts.find(post => post.id === id)
+    }
+
+}
+
+export default connect(mapStateToProps)(Post);
